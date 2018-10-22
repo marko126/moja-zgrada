@@ -27,4 +27,16 @@ Route::middleware('auth')->prefix('admin')->group(function() {
     
     Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
     
+    //Building
+    
+    Route::get('/building', 'Admin\BuildingController@index')->name('admin.building.index');
+    
+    Route::get('/building/add', 'Admin\BuildingController@add')->name('admin.building.add');
+    Route::post('/building/add', 'Admin\BuildingController@create')->name('admin.building.create');
+    
+    Route::get('/building/edit/{id}', 'Admin\BuildingController@edit')->name('admin.building.edit');
+    Route::post('/building/update/{id}', 'Admin\BuildingController@update')->name('admin.building.update');
+    
+    Route::post('/building/delete', 'Admin\BuildingController@delete')->name('admin.building.delete');
+    
 });
