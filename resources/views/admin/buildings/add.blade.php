@@ -7,7 +7,7 @@
         <a href="{{route('admin.dashboard')}}">Dashboard</a>
     </li>
     <li class="breadcrumb-item">
-        <a href="{{route('admin.building.index')}}">Buildings</a>
+        <a href="{{route('admin.buildings.index')}}">Buildings</a>
     </li>
     <li class="breadcrumb-item active">
         Add
@@ -31,7 +31,7 @@
             </button>
         </div>
         @endif
-        <form method='POST' action="{{route('admin.building.create')}}">
+        <form method='POST' action="{{route('admin.buildings.create')}}">
             @csrf
             <div class="form-group">
                 <label>Manager id</label> 
@@ -177,7 +177,7 @@
                 @endif
             </div>
             <div class="form-group text-right">
-                <a href="{{route('admin.building.index')}}" class="btn btn-secondary">Cancel</a>
+                <a href="{{route('admin.buildings.index')}}" class="btn btn-secondary">Cancel</a>
                 <button name="submit" type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>

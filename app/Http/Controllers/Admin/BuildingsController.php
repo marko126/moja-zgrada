@@ -4,15 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\MzBuilding;
+use App\Model\MzBuildings;
 
-class BuildingController extends Controller
+class BuildingsController extends Controller
 {
      public function index() {
         
-        $buildings = MzBuilding::all();
+        $buildings = MzBuildings::all();
         
-        return view('admin.building.index', [
+        return view('admin.buildings.index', [
             'buildings' => $buildings
         ]);
         
@@ -20,7 +20,7 @@ class BuildingController extends Controller
     
     public function add() {
         
-        return view('admin.building.add');
+        return view('admin.buildings.add');
         
     }
     
@@ -44,7 +44,7 @@ class BuildingController extends Controller
             'status' => 'required'           
         ]);
         
-        $building = new MzBuilding();
+        $building = new MzBuildings();
         $building->fill([
             'manager_id' => $request->input('manager_id'),
             'name' => $request->input('name'),
@@ -70,9 +70,9 @@ class BuildingController extends Controller
         
         $request = request();
         
-        $building = MzBuilding::findorFail($id);
+        $building = MzBuildings::findorFail($id);
         
-        return view('admin.building.edit', [
+        return view('admin.buildings.edit', [
             'building' => $building
         ]);
         
@@ -98,7 +98,7 @@ class BuildingController extends Controller
             'status' => 'required' 
         ]);
         
-        $building = MzBuilding::findorFail($id);
+        $building = MzBuildings::findorFail($id);
         $building->fill([
             'manager_id' => $request->input('manager_id'),
             'name' => $request->input('name'),
@@ -123,7 +123,7 @@ class BuildingController extends Controller
         
         $request = request();
         
-        $building = MzBuilding::findorFail($request->input('id'));
+        $building = MzBuildings::findorFail($request->input('id'));
         $building->delete();
         
         return redirect()->back()->with('systemMessage', 'Building ' . $building['name'] . ' is successfully deleted.');

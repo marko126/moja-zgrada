@@ -23,7 +23,7 @@
         <i class="fa fa-table"></i> Buildings list
 
         <div class="btn-group btn-group-sm float-right">
-            <a class="btn btn-secondary" href="{{route('admin.building.add')}}">
+            <a class="btn btn-secondary" href="{{route('admin.buildings.add')}}">
                 <i class="fa fa-plus"></i>
                 Add Building
             </a>
@@ -35,7 +35,19 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Manager ID</th>
                         <th>Name</th>
+                        <th>Building number</th>
+                        <th>Unique ID</th>
+                        <th>Tax ID</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Township</th>
+                        <th>Postal code</th>
+                        <th>Entrance</th>
+                        <th>No of aptmnts</th>
+                        <th>Description</th>
+                        <th>Status</th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -58,7 +70,7 @@
                         <td>{{$building['status']}}</td>
                         <td>
                             <div class="btn-group">
-                                <a class="btn btn-secondary" href="{{route('admin.building.edit', ['id' => $building['id']])}}" title="edit"><i class="fa fa-pencil"></i></a>
+                                <a class="btn btn-secondary" href="{{route('admin.buildings.edit', ['id' => $building['id']])}}" title="edit"><i class="fa fa-pencil"></i></a>
                                 <button class="btn btn-secondary" 
                                         title="delete" 
                                         data-toggle="modal" 
@@ -75,7 +87,7 @@
             </table>
         </div>
     </div>
-    <form method="POST" action="{{ route('admin.building.delete') }}" class="modal fade" id="delete-building" tabindex="-1" role="dialog" aria-hidden="true">
+    <form method="POST" action="{{ route('admin.buildings.delete') }}" class="modal fade" id="delete-building" tabindex="-1" role="dialog" aria-hidden="true">
         @csrf
         <input type="hidden" name="id" value="">
         <div class="modal-dialog" role="document">

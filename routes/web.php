@@ -27,16 +27,16 @@ Route::middleware('auth')->prefix('admin')->group(function() {
     
     Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
     
-    //Building
+    //Buildings
     
-    Route::get('/building', 'Admin\BuildingController@index')->name('admin.building.index');
+    Route::get('/buildings', 'Admin\BuildingsController@index')->name('admin.buildings.index');
     
-    Route::get('/building/add', 'Admin\BuildingController@add')->name('admin.building.add');
-    Route::post('/building/add', 'Admin\BuildingController@create')->name('admin.building.create');
+    Route::get('/buildings/add', 'Admin\BuildingsController@add')->name('admin.buildings.add');
+    Route::post('/buildings/add', 'Admin\BuildingsController@create')->name('admin.buildings.create');
     
-    Route::get('/building/edit/{id}', 'Admin\BuildingController@edit')->name('admin.building.edit');
-    Route::post('/building/update/{id}', 'Admin\BuildingController@update')->name('admin.building.update');
+    Route::get('/buildings/edit/{id}', 'Admin\BuildingsController@edit')->name('admin.buildings.edit');
+    Route::post('/buildings/update/{id}', 'Admin\BuildingsController@update')->name('admin.buildings.update');
     
-    Route::post('/building/delete', 'Admin\BuildingController@delete')->name('admin.building.delete');
+    Route::post('/buildings/delete', 'Admin\BuildingsController@delete')->name('admin.buildings.delete');
     
 });

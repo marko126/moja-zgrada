@@ -4,9 +4,9 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MzBuilding extends Model
+class MzBuildings extends Model
 {
-    protected $table = 'mz_building';
+    protected $table = 'mz_buildings';
     
     protected $primaryKey = 'id';
     

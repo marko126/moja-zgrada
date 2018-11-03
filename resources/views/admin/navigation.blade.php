@@ -13,7 +13,7 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                        <a class="nav-link" href="{{route('admin.building.index')}}">
+                        <a class="nav-link" href="{{route('admin.buildings.index')}}">
                             <i class="fa fa-fw fa-tags"></i>
                             <span class="nav-link-text">Buildings</span>
                         </a>
